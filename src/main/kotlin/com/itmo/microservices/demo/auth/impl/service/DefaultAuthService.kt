@@ -5,14 +5,14 @@ import com.itmo.microservices.demo.auth.api.model.AuthenticationResult
 import com.itmo.microservices.demo.auth.api.service.AuthService
 import com.itmo.microservices.demo.common.exception.AccessDeniedException
 import com.itmo.microservices.demo.common.exception.NotFoundException
-import com.itmo.microservices.demo.users.api.service.UserService
+import com.itmo.microservices.demo.users.api.service.DeliveryService
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 
 @Service
-class DefaultAuthService(private val userService: UserService,
+class DefaultAuthService(private val userService: DeliveryService,
                          private val tokenManager: JwtTokenManager,
                          private val passwordEncoder: PasswordEncoder) : AuthService {
 

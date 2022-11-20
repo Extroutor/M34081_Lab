@@ -1,10 +1,10 @@
 package com.itmo.microservices.demo.users.impl.util
 
-import com.itmo.microservices.demo.users.api.model.AppUserModel
+import com.itmo.microservices.demo.users.api.model.AppDeliveryModel
 import com.itmo.microservices.demo.users.impl.entity.AppUser
 
-fun AppUser.toModel(): AppUserModel = kotlin.runCatching {
-    AppUserModel(
+fun AppUser.toModel(): AppDeliveryModel = kotlin.runCatching {
+    AppDeliveryModel(
         username = this.username!!,
         name = this.name!!,
         surname = this.surname!!,
