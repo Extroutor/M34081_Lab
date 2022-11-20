@@ -37,7 +37,7 @@ class DefaultUserService(private val userRepository: UserRepository,
         eventLogger.info(UserServiceNotableEvents.I_USER_CREATED, userEntity.username)
     }
 
-    override fun getAccountData(requester: UserDetails): AppUserModel =
+    override fun getUserById(requester: UserDetails): AppUserModel =
             userRepository.findByIdOrNull(requester.username)?.toModel() ?:
             throw NotFoundException("User ${requester.username} not found")
 
